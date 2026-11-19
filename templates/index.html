@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AjudaBot | Loja Girassol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="chat">
+    <header class="chat-header">
+      <div class="avatar" aria-hidden="true">A</div>
+      <div>
+        <h1>AjudaBot</h1>
+        <p><span class="status-dot" aria-hidden="true"></span>Online, atendimento da Loja Girassol</p>
+      </div>
+    </header>
+
+    <div id="log" class="log" role="log" aria-live="polite" aria-label="Conversa com o AjudaBot"></div>
+
+    <div id="suggestions" class="suggestions" aria-label="Sugestões de perguntas">
+      <button type="button" class="chip">Qual o prazo de entrega?</button>
+      <button type="button" class="chip">Como faço uma troca?</button>
+      <button type="button" class="chip">Quais as formas de pagamento?</button>
+      <button type="button" class="chip">Qual o horário de atendimento?</button>
+      <button type="button" class="chip">Falar com atendente</button>
+    </div>
+
+    <form id="chat-form" class="composer" autocomplete="off">
+      <label for="message" class="sr-only">Sua mensagem</label>
+      <input id="message" type="text" maxlength="500" placeholder="Escreva sua dúvida" required>
+      <button id="send" type="submit">Enviar</button>
+    </form>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
